@@ -2,8 +2,6 @@ import sys
 import os
 import getpass
 from github import Github
-from pathlib import Path
-
 
 
 

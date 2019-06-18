@@ -5,32 +5,27 @@ from github import Github
 
 
 
+def verification():
 
-
-def create():
-
-	# If no parameters passed ask for a project name and check if file already there
-		
-	
 	if len(sys.argv) > 1:
 		x = sys.argv[1]
 
 		print("the project folder and repository will be called ", x)
 	else:
-		x = input("Project tile: ")
+		 x = input("Project tile: ")
 
+	# need to check if file already exsists
 
-
-
-
-
-
-	
-	# I want to somehow verify username and passord
 
 	username = input("Enter Github username: ")
 	password = getpass.getpass("Enter Github password: ")
 
+	create(x, username, password)
+
+
+def create(x, username, password):
+
+	# I want to somehow verify username and passord	
 	path = ("/home/osboxes/Documents/Projects/"+str(x))
 
 	# Make folder named parameter, os.makedirs(path + str(x))	
@@ -42,6 +37,12 @@ def create():
 	
 	print("Succesfully created repository ", x)
 
+
+
+
+
+
 	
 if __name__ == "__main__":
-	create()
+	verification()
+

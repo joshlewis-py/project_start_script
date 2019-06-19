@@ -10,17 +10,32 @@ path = ("/home/osboxes/Documents/Projects/"+str(x))
 
 def verification():
 
-	# check if x already exsists
+	# check if x already exsists and if there was paramenter in the connand
+
+
+
+
 
 	if len(sys.argv) > 1:
 		x = sys.argv[1]
-		if not os.path.exists(path):
+
+		if os.path.exists(path):
 			print("File already exsists try again")
-			verification()
+
 		else:
-			print("the project folder and repository will be called ", x)
+			print("The project folder and repository will be called", x)
+
+
+
 	else:
 		x = input("Project tile: ")
+		if not os.path.exists(path):
+			print("File already exsists try again")
+
+		else:
+			print("The project folder/repository will be called", x)
+
+
 
 
 	# need to check if file already exsists

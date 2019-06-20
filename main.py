@@ -1,39 +1,43 @@
 import sys
 import os
+import os.path
 import getpass
 from github import Github
 
-
-x = "defult"
-path = ("/home/osboxes/Documents/Projects/"+str(x))
-
+path = ("/home/osboxes/Documents/Projects/")
 
 def verification():
 
 	# check if x already exsists and if there was paramenter in the connand
+	x = str(sys.argv[1])
+	while True:
+		if len(sys.argv) > 1:
+			if os.path.exists(path+x):
+
+				print("file already exists, try again")
+				x = input("Project title: ")
+
+			else:
+				print("the project is called ", x)
+				break
 
 
 
-
-
-	if len(sys.argv) > 1:
-		x = sys.argv[1]
-
-		if os.path.exists(path):
-			print("File already exsists try again")
 
 		else:
-			print("The project folder and repository will be called", x)
+			x = input("project title: ")
+
+			if os.path.exists(path+x):
+				print("file already exists, try again")
+				x = input("Project title: ")
+
+			else:
+				print("the project is called ", x)
+				break
 
 
 
-	else:
-		x = input("Project tile: ")
-		if not os.path.exists(path):
-			print("File already exsists try again")
 
-		else:
-			print("The project folder/repository will be called", x)
 
 
 

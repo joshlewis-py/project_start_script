@@ -16,3 +16,4 @@ To Do:
 - Ensure pep8 compliance.
 - Create the setup.py.
 - Look into creating a more user friendly way to run the command.
+- Create Documentation? 

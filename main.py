@@ -4,6 +4,7 @@ import os
 import getpass
 from github import Github
 
+
 path = ("/home/osboxes/Documents/Projects/")
 
 
@@ -32,37 +33,25 @@ def verification():
 
 
 def github(x):
-	# Github Login, with verification.
+	# Github Login, maybe uselss but I like it.
 	print("Enter your login details to create", x)
-
-	while True:
-
-		try:
-			username = input("Enter Github username: ")
-			password = getpass.getpass("Enter Github password: ")
-			break
-
-		except:
-			print("Wrong login details, try again!")
-
-
+	username = input("Enter Github username: ")
+	password = getpass.getpass("Enter Github password: ")
 	create(x, username, password)
 
 
-
-
-
-
-
-
 def create(x, username, password):
-	# Create folder and README.md file on the local system.
-	os.makedirs(path+(str(x)))
-
 	# Get Github account and create repo named after the project.
-	user = Github(username, password).get_user()
-	repo = user.create_repo(x)
-	print("Succesfully created repository ", x)
+	try:
+		user = Github(username, password).get_user()
+		repo = user.create_repo(x)
+		# Create folder and README.md file on the local system.
+		os.makedirs(path+(str(x)))
+		print("Succesfully created repository ", x)
+
+	except:
+		print("Wrong login details, try again!")
+		github(x)
 
 
 if __name__ == "__main__":

@@ -45,13 +45,15 @@ def create(x, username, password):
 	try:
 		user = Github(username, password).get_user()
 		repo = user.create_repo(x)
-		# Create folder and README.md file on the local system.
-		os.makedirs(path+(str(x)))
-		print("Succesfully created repository ", x)
 
 	except:
 		print("Wrong login details, try again!")
 		github(x)
+
+	# Create folder and README.md file on the local system.
+	os.makedirs(path+(str(x)))
+	f= open(path+(str(x))+"/README.md","w+")
+	print("Succesfully created repository ", x)
 
 
 if __name__ == "__main__":

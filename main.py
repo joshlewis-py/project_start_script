@@ -51,12 +51,18 @@ def create(x, username, password):
 		github(x)
 
 	# Create folder and README.md file on the local system.
+	
+	
 	os.makedirs(path+(str(x)))
+	# os.chdir(path+(str(x)))
+	
+	
+	subprocess.Popen(["git", "init"], cwd=path+str(x))
+	subprocess.Popen(["touch", "README.md"], cwd=path+str(x))
+	
+	
 
-	# subprocess.Popen("touch", "README.md", cwd="path+str(x)")
-	# git init
 	# git remote add origin ........
-	# f= open(path+(str(x))+"/README.md","w+")
 	# git push -u origin master
 
 	

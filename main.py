@@ -59,12 +59,7 @@ def create(x, username, password):
 	
 	subprocess.Popen(["git", "init"], cwd=path+str(x))
 	subprocess.Popen(["touch", "README.md"], cwd=path+str(x))
-	
-	
-
-	# git remote add origin ........
-	# git push -u origin master
-
+	subprocess.Popen(["git", "push", "--set-upstream origin master"], cwd=path+str(x))
 	
 	print("Succesfully created repository ", x)
 

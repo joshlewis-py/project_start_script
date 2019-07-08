@@ -1,9 +1,8 @@
+#!/usr/bin/env python
 import sys
 import os
 import getpass
 from github import Github
-import subprocess
-
 
 path = ("/home/osboxes/Documents/Projects/")
 
@@ -54,15 +53,12 @@ def create(x, username, password):
 
 	os.makedirs(path+(str(x)))
 	
-	commands = ['git init', 'touch README.md', ]
-	
-	for command in commands:
-		print (command)
-		subprocess.Popen(command, cwd=path+str(x))
-		
- 
-	
+	commands = ["git init &", "touch README.md &"]
 
+	for command in commands:
+		os.system(command)
+	
+	
 	# subprocess.Popen(["git", "init"], cwd=path+str(x))
 	# subprocess.Popen(["touch", "README.md"], cwd=path+str(x))
 	# git remote add origin https://github.com/joshlewis-py/x.git

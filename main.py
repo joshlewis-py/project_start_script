@@ -52,8 +52,8 @@ def create(x, username, password):
 	# Create folder and README.md file on the local system.
 
 	os.makedirs(path+(str(x)))
-	
-	commands = ["git init &", "touch README.md &"]
+	os.chdir(path+(str(x)))
+	commands = ["git init &", "touch README.md &", "git remote add origin https://github.com/joshlewis-py/dmj.git &", "git add . &", 'git commit -m "Generated README.md" &', "git push --set-upstream origin master &"]
 
 	for command in commands:
 		os.system(command)
@@ -64,7 +64,7 @@ def create(x, username, password):
 	# git remote add origin https://github.com/joshlewis-py/x.git
 	# git add .
 	# git commit -m "start"
-	# subprocess.Popen(["git", "push", "--set-upstream origin master"], cwd=path+str(x))
+	# subprocess.Popen([""], cwd=path+str(x))
 	
 	print("Succesfully created repository ", x)
 

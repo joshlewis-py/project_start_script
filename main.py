@@ -53,11 +53,21 @@ def create(x, username, password):
 
 	os.makedirs(path+(str(x)))
 	os.chdir(path+(str(x)))
-	commands = ["git init &", "touch README.md &", "git remote add origin https://github.com/joshlewis-py/dmj.git &", "git add . &", 'git commit -m "Generated README.md" &', "git push --set-upstream origin master &"]
+	
+	# command = 'git init | touch README.md | git remote add origin https://github.com/joshlewis-py/{}.git | git add . | git commit - m "test" | git push --set-upstream origin master'.format(x)
+	# os.system(command)
+
+
+
+
+	commands = ["git init &", "touch README.md &", "git remote add origin https://github.com/joshlewis-py/health.git &", "git add . &", 'git commit -m "Generated README.md" &', "git push --set-upstream origin master &"]
+	
+	
 
 	for command in commands:
 		os.system(command)
-	
+		os.system('echo '+ command)
+		
 	
 	# subprocess.Popen(["git", "init"], cwd=path+str(x))
 	# subprocess.Popen(["touch", "README.md"], cwd=path+str(x))

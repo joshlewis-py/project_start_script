@@ -3,6 +3,7 @@ import sys
 import os
 import getpass
 from github import Github
+import time
 
 path = ("/home/osboxes/Documents/Projects/")
 
@@ -53,30 +54,16 @@ def create(x, username, password):
 
 	os.makedirs(path+(str(x)))
 	os.chdir(path+(str(x)))
-	
-	# command = 'git init | touch README.md | git remote add origin https://github.com/joshlewis-py/{}.git | git add . | git commit - m "test" | git push --set-upstream origin master'.format(x)
-	# os.system(command)
 
 
-
-
-	commands = ["git init &", "touch README.md &", "git remote add origin https://github.com/joshlewis-py/health.git &", "git add . &", 'git commit -m "Generated README.md" &', "git push --set-upstream origin master &"]
+	commands = ["git init &", "touch README.md &", "git remote add origin https://github.com/joshlewis-py/"+ x +".git &", "git add . &", 'git commit -m "Generated README.md" &', "git push --set-upstream origin master &", "echo "+ username+" &", "echo " + password+ " &"]
 	
 	
-
 	for command in commands:
 		os.system(command)
-		os.system('echo '+ command)
-		
+		# os.system('echo '+ command)
+		time.sleep(2)
 	
-	# subprocess.Popen(["git", "init"], cwd=path+str(x))
-	# subprocess.Popen(["touch", "README.md"], cwd=path+str(x))
-	# git remote add origin https://github.com/joshlewis-py/x.git
-	# git add .
-	# git commit -m "start"
-	# subprocess.Popen([""], cwd=path+str(x))
-	
-	print("Succesfully created repository ", x)
 
 
 if __name__ == "__main__":

@@ -56,14 +56,14 @@ def create(x, username, password):
 	os.chdir(path+(str(x)))
 
 
-	commands = ["git init &", "touch README.md &", "git remote add origin https://github.com/joshlewis-py/"+ x +".git &", "git add . &", 'git commit -m "Generated README.md" &', "git push --set-upstream origin master &", "echo "+ username+" &", "echo " + password+ " &"]
+	commands = ["git init &", "touch README.md &", "git remote add origin https://github.com/joshlewis-py/"+ x +".git &", "git add . &", 'git commit -m "Generated README.md"]
 	
 	
 	for command in commands:
 		os.system(command)
 		# os.system('echo '+ command)
-		time.sleep(2)
-	
+		time.sleep(1)
+	exit()
 
 
 if __name__ == "__main__":

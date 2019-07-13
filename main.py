@@ -5,6 +5,7 @@ import getpass
 from github import Github
 import time
 
+
 path = ("/home/osboxes/Documents/Projects/")
 
 
@@ -56,7 +57,8 @@ def create(x, username, password):
 	os.chdir(path+(str(x)))
 
 
-	commands = ["git init &", "touch README.md &", "git remote add origin https://github.com/joshlewis-py/"+ x +".git &", "git add . &", 'git commit -m "Generated README.md"]
+	commands = ["git init &", "touch README.md &", "git remote add origin https://github.com/joshlewis-py/" 
+		    + x + ".git &", "git add . &", 'git commit -m "Generated README.md"]
 	
 	
 	for command in commands:

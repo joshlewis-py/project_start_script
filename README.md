@@ -10,8 +10,9 @@ or with
 "python main.py ***project title***"
 
 To Do:
-
-- Test in system compatibility.
-- Generate a README.md file. *Done*
-- Ensure pep8 compliance. *Done*
+- Test system compatibility.
 - Look into creating a more user friendly way to run the command.
+
+Complete:
+- Generate a README.md file. 
+- Ensure pep8 compliance. 
